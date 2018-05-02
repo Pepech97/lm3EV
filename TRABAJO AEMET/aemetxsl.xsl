@@ -138,38 +138,69 @@
                 <xsl:if test="count(temperatura/dato)=0">
                   <xsl:value-of select="temperatura/maxima"/>ºC
                 </xsl:if>
-                <!--ESTO ES ESTADO CIELO-->
+               
               </th>
 
             </xsl:for-each>
           </tr>
+          <!--ESTO ES ESTADO CIELO-->
+          
+          
           <!--ESTO ES PROBABILIDAD PRECIPITACION-->
           <tr>
-            <xsl:for-each select="prediccion/dia">
-              <xsl:if test="count(temperatura/dato)!=0">
-                <xsl:value-of select="temperatura/dato[@hora='12']"/>ºC
+          
+            <xsl:for-each select="prediccion/dia">  
+              <th>
+              <xsl:if test="count(prob_precipitacion)!=1">
+                <xsl:value-of select="prob_precipitacion[@periodo='12-24']"/>%
               </xsl:if>
-              <xsl:if test="count(temperatura/dato)=0">
-                <xsl:value-of select="temperatura/maxima"/>ºC
+              <xsl:if test="count(prob_precipitacion)=1">
+                <xsl:value-of select="prob_precipitacion"/>%
               </xsl:if>
+              </th>
             </xsl:for-each>
           </tr>
+          <!--ESTO ES PROBABILIDAD PRECIPITACION-->
+
+          
+          <!--ESTO ES COTA NIEVE PROV-->
           <tr>
             <xsl:for-each select="prediccion/dia">
             </xsl:for-each>
           </tr>
+          <!--ESTO ES COTA NIEVE PROV-->
+          
+          
+          <!--ESTO ES VIENTO-->
           <tr>
             <xsl:for-each select="prediccion/dia">
             </xsl:for-each>
           </tr>
+          <!--ESTO ES VIENTO-->
+
+
+          <!--ESTO ES RACHA_MAX-->
           <tr>
             <xsl:for-each select="prediccion/dia">
             </xsl:for-each>
           </tr>
+          <!--ESTO ES RACHA_MAX-->
+
+
+          <!--ESTO ES SENSACION TERMICA-->
           <tr>
             <xsl:for-each select="prediccion/dia">
             </xsl:for-each>
           </tr>
+          <!--ESTO ES SENSACION TERMICA-->
+          
+          
+          <!--ESTO ES HUMEDAD RELATIVA-->
+          <tr>
+            <xsl:for-each select="prediccion/dia">
+            </xsl:for-each>
+          </tr>
+          <!--ESTO ES HUMEDAD RELATIVA-->
         </table>
       </body>
     </html>
